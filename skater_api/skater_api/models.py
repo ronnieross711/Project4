@@ -13,6 +13,7 @@ class Skater(models.Model):
         return self.name
 
 class Tricks(models.Model):
+    skater = models.ForeignKey(Skater, on_delete=models.CASCADE, related_name='tricks')
     trick_name = models.CharField(max_length=100)
     signature_trick = models.CharField(max_length=100)
     favorite_trick = models.CharField(max_length=120)
