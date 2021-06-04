@@ -3,9 +3,9 @@ from django.db import models
 # Create your models here.
 class Skater(models.Model):
     name = models.CharField(max_length=100)
-    age = models.CharField(max_length=50)
-    home_town = models.CharField(max_length=100)
-    board_sponsor = models.CharField(max_length=120)
+    age = models.CharField(max_length=60)
+    home_town = models.CharField(max_length=110)
+    board_sponsor = models.CharField(max_length=130)
     shoe_sponsor = models.CharField(max_length=100)
     photo_url = models.TextField()
 
