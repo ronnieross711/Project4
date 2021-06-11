@@ -7,7 +7,7 @@ class Skater(models.Model):
     home_town = models.CharField(max_length=110)
     board_sponsor = models.CharField(max_length=130)
     shoe_sponsor = models.CharField(max_length=100)
-    photo_url = models.TextField()
+    photo_url = models.TextField(null=False)
 
     def __str__(self):
         return self.name
@@ -18,8 +18,8 @@ class Tricks(models.Model):
     signature_trick = models.CharField(max_length=100)
     favorite_trick = models.CharField(max_length=120)
     trick_location = models.CharField(max_length=150)
-    photo_url = models.TextField()
+    photo_url = models.TextField(null=False)
 
     def __str__(self):
-        return self.trick_name
+        return self.skater
 

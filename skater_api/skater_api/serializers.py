@@ -13,20 +13,21 @@ class SkaterSerializer(serializers.HyperlinkedModelSerializer):
     )
     class Meta:
         model = Skater
-        fields = ('name', 'age', 'home_town', 'board_sponsor', 'shoe_sponsor', 'photo_url', 'skater_url', 'tricks')
+        fields = ('id', 'name', 'age', 'home_town', 'board_sponsor', 'shoe_sponsor', 'photo_url', 'skater_url', 'tricks',)
 
 
 class TricksSerializer(serializers.HyperlinkedModelSerializer):
-    skater = serializers.HyperlinkedRelatedField(
-        view_name='skater_detail',
-        many=True,
-        read_only=True
-    )
-    skater_id = serializers.PrimaryKeyRelatedField(
-       queryset=Skater.objects.all(),
-       source='skater'
-      )
+    # skater = serializers.HyperlinkedRelatedField(
+    #     view_name='skater_detail',
+    #     many=True,
+    #     read_only=True
+    # )
+    
+    # skater_id = serializers.PrimaryKeyRelatedField(
+    #    queryset=Skater.objects.all(),
+    #    source='tricks'
+    #   )
 
     class Meta:
         model = Tricks
-        fields = ('skater', 'trick_name' 'signature_trick', 'favorite_trick', 'trick_location', 'photo_url')
+        fields = ('trick_name', 'signature_trick', 'favorite_trick', 'trick_location', 'photo_url')
